@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import { useState } from "react";
 
-function App() {
+import ItemsForm from "./components/ItemsForm";
+import ItemsList from "./components/ItemsList";
+
+const App = () => {
+  const [items, setItems] = useState([]);
+
+  const addItemsHandler = (newProduct) => {
+    if (newProduct.product !== "" && newProduct.amount > 0) {
+      setItems((prevItems) => [...prevItems, newProduct]);
+    }
+  };
+
+  const removeItemsHandler = (event) => {
+    event.target.style.setProperty("text-decoration", "line-through");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <ItemsForm onAddItems={addItemsHandler} />
+      <ItemsList products={items} onRemove={removeItemsHandler} />
+    </Fragment>
   );
-}
+};
 
 export default App;

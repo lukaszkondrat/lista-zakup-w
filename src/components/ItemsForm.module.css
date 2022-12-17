@@ -1,0 +1,42 @@
+.form {
+  width: 40rem;
+  margin: 2rem auto;
+  max-width: 80%;
+}
+
+.form h2 {
+  color: rgb(29, 20, 20);
+  border-bottom: 2px solid rgb(122, 118, 118);
+  padding-bottom: 0.5rem;
+}
+
+.control label {
+  color: rgb(41, 18, 18);
+  font-weight: 500;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.control input {
+  margin-top: 0.3rem;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  padding: 0.3rem 0.25rem;
+  border: 2px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.control input:focus {
+  outline: none;
+  border-color: #ee547a;
+}
+
+.actions button {
+  background-color: snow;
+  color: rgb(41, 18, 18);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.actions button:hover {
+  background-color: antiquewhite;
+}
